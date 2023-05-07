@@ -11,8 +11,9 @@
 import { Module } from '@nestjs/common';
 import { CatsModule } from './cats/cats.module';
 import { MoviesShelfModule } from './movies-shelf/movies-shelf.module';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [CatsModule, MoviesShelfModule],
+  imports: [CatsModule, MoviesShelfModule, UserModule],
 })
 export class AppModule {}

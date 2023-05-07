@@ -1,14 +1,15 @@
 type Rating = 'G' | 'PG' | 'R';
 export class CreateMoviesShelfDto {
-  canme: string;
-  ename: string;
+  name: string;
+  name_en: string;
   rating: Rating;
   // theater: Types.ObjectId,
   director: string;
-  actor: string[];
-  Length: string;
-  comeout: string;
-  premiere: string;
+  // cast: string[];
+  duration: string;
+  release_date: string;
+  poster: string;
   trailer: string;
-  story: string;
+  synopsis: string;
+  genre: string;
 }

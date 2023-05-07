@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  db:
+    image: mango
+    restart: always
+    ports: -27018:27018
+    environment:
+      - MANGO_DB: nest-course

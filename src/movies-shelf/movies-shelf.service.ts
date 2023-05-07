@@ -18,12 +18,12 @@ export class MoviesShelfService {
     return createdMovies;
   }
 
-  findAll() {
-    return `This action returns all moviesShelf`;
+  async findAll() {
+    return this.MoviesShelfModule.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} moviesShelf`;
+  findOne(time: string) {
+    return `依照時間${time}找 moviesShelf`;
   }
 
   update(id: number, updateMoviesShelfDto: UpdateMoviesShelfDto) {

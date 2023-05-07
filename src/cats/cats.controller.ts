@@ -9,6 +9,7 @@ export class CatsController {
 
   @Post()
   async create(@Body() createCatDto: CreateCatDto) {
+    console.log(999, createCatDto);
     return this.catsService.create(createCatDto);
   }
 
