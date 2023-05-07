@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { MoviesShelfService } from './movies-shelf.service';
 import { CreateMoviesShelfDto } from './dto/create-movies-shelf.dto';
 import { UpdateMoviesShelfDto } from './dto/update-movies-shelf.dto';
@@ -23,7 +31,10 @@ export class MoviesShelfController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMoviesShelfDto: UpdateMoviesShelfDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateMoviesShelfDto: UpdateMoviesShelfDto,
+  ) {
     return this.moviesShelfService.update(+id, updateMoviesShelfDto);
   }
 

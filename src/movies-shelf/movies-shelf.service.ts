@@ -1,14 +1,20 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { Model } from 'mongoose';
 import { CreateMoviesShelfDto } from './dto/create-movies-shelf.dto';
 import { UpdateMoviesShelfDto } from './dto/update-movies-shelf.dto';
 import { MovieShelf } from './interfaces/movies-shelf.interface';
 
 @Injectable()
 export class MoviesShelfService {
-  constructor(@Inject('MOVIESSHELF_MODEL') private readonly MoviesShelfModule: Model<MovieShelf>) {}
+  constructor(
+    @Inject('MOVIESSHELF_MODEL')
+    private readonly MoviesShelfModule: Model<MovieShelf>,
+  ) {}
 
-  async create(createMoviesShelfDto: CreateMoviesShelfDto): Promise<MovieShelf> {
-    const createdMovies = this.MoviesShelfModule.create(CreateMoviesShelfDto);
+  async create(
+    createMoviesShelfDto: CreateMoviesShelfDto,
+  ): Promise<MovieShelf> {
+    const createdMovies = this.MoviesShelfModule.create(createMoviesShelfDto);
     return createdMovies;
   }
 
