@@ -14,7 +14,7 @@
 //   genre: String,
 // });
 
-import { Prop, Schema, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 @Schema()
@@ -46,3 +46,5 @@ export class User extends Document {
   @Prop({ default: true })
   enable: boolean;
 }
+
+export const UserSchema = SchemaFactory.createForClass(User);
